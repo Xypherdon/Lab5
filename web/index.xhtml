@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <h:head></h:head>
+   <h:body>
+      <h:form>
+         <f:view>
+            <p></p>
+            Press a Key:
+            <f:ajax event="keypress" render="output" listener="#{myManagedBean.keypress}" />
+            <p></p>
+
+            Press a Button:
+            <p></p>
+            <h:commandButton value="Up">
+               <f:ajax event="click" render="output" listener="#{myManagedBean.up}" />
+            </h:commandButton>
+
+            <h:commandButton value="Down">
+               <f:ajax event="click" render="output" listener="#{myManagedBean.down}" />
+            </h:commandButton>
+
+            <h:commandButton value="Left">
+               <f:ajax event="click" render="output" listener="#{myManagedBean.left}" />
+            </h:commandButton>
+
+            <h:commandButton value="Right">
+               <f:ajax event="click" render="output" listener="#{myManagedBean.right}" />
+            </h:commandButton>
+
+            <pre>
+               <h:outputLabel id="output" value="#{myManagedBean.out}"/>
+            </pre>
+         </f:view>
+      </h:form>
+   </h:body>
+</html>
